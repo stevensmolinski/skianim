@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>Smolin.ski</title>
+        <style type="text/css">
+            body { background-color: #6cf }
+        </style>
     </head>
     <body>
         <svg baseProfile="full"
@@ -13,14 +16,14 @@
             <circle name="sun" cx="15" cy="10" r="5" fill="yellow" 
                     stroke="orange" stroke-width="0.2"/>
             <g name="cloud">
-            <g fill="#bbb">
+            <g name="cloud-outline" fill="#bbb">
             <circle cx="70" cy="10" r="3.2"/>
             <circle cx="75" cy="10" r="5.2"/>
             <circle cx="80" cy="10" r="7.2"/>
             <circle cx="85" cy="10" r="5.2"/>
             <circle cx="90" cy="10" r="3.2"/>
             </g>
-            <g fill="#eee">
+            <g name="cloud-center" fill="#eee">
             <circle cx="70" cy="10" r="3"/>
             <circle cx="75" cy="10" r="5"/>
             <circle cx="80" cy="10" r="7"/>
@@ -34,11 +37,24 @@
             <rect x="0" y="40" width="100" height="60"/>
             </g>
             <g name="snowcap" fill="#f2f2f2">
-            <polygon points="50, 0 18.5, 25 81.5, 25"/>
-            
+            <path d="m 50 0 l -31.5 25 q 15.75 5 31.5 0 q 15.75 -5 31.5 0 z"/>
             </g>
             </g>
-
+            <g name="skier">
+            <path name="left-ski" id="skier-body-left-ski"
+                  d="m 57.5 65.5 l 3 1 q 1 0 0 -1" 
+                  stroke="black" stroke-width="0.2" fill="none"/>
+            <use href="#skier-body-left-ski" transform="translate(1.7)"/>
+            <path name="body"
+                  d="m 60 60 q -2 2 -1 4 l 2 0 q -1.5 -2 0 -4 z" fill="red"/>
+            <path name="left-arm"
+                  d="m 59 61.5 q -2 2 0 0.5"
+                  fill="none" stroke="red" stroke-width="0.2"/>
+            <path name="left-leg" id="skier-body-left-leg"
+                  d="m 59 64 q 1 1 0 2 l 0.3 0 q 1 -1 0 -2 z" fill="red"/>
+            <use href="#skier-body-left-leg" transform="translate(1.7)"/>
+            <circle name="head" cx="60" cy="60" r="1.1" fill="#fff1e3"/>
+            </g>
         </svg>
     </body>
 </html> 
