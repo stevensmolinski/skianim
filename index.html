@@ -11,19 +11,19 @@
              height="100%"
              viewbox="0 0 100 100"
              xmlns="http://www.w3.org/2000/svg">
-            <rect name="background" x="0" y="0" 
+            <rect class="background" x="0" y="0" 
                                     height="100" width="100" fill="#6cf"/>
-            <circle name="sun" cx="15" cy="10" r="5" fill="yellow" 
+            <circle class="sun" cx="15" cy="10" r="5" fill="yellow" 
                     stroke="orange" stroke-width="0.2"/>
-            <g name="cloud">
-            <g name="cloud-outline" fill="#bbb">
+            <g class="cloud">
+            <g class="cloud-outline" fill="#bbb">
             <circle cx="70" cy="10" r="3.2"/>
             <circle cx="75" cy="10" r="5.2"/>
             <circle cx="80" cy="10" r="7.2"/>
             <circle cx="85" cy="10" r="5.2"/>
             <circle cx="90" cy="10" r="3.2"/>
             </g>
-            <g name="cloud-center" fill="#eee">
+            <g class="cloud-center" fill="#eee">
             <circle cx="70" cy="10" r="3"/>
             <circle cx="75" cy="10" r="5"/>
             <circle cx="80" cy="10" r="7"/>
@@ -31,30 +31,41 @@
             <circle cx="90" cy="10" r="3"/>
             </g>
             </g>
-            <g name="mountain">
-            <g name="mountainside" fill="#49f" stroke="#49f" stroke-width="0.1">
+            <g class="mountain">
+            <g class="mountainside" fill="#adf" stroke="#adf" stroke-width="0.1">
             <polygon  points="50, 0 100, 40 0, 40"/>
             <rect x="0" y="40" width="100" height="60"/>
             </g>
-            <g name="snowcap" fill="#f2f2f2">
+            <g class="snowcap" fill="#f2f2f2">
             <path d="m 50 0 l -31.5 25 q 15.75 5 31.5 0 q 15.75 -5 31.5 0 z"/>
             </g>
             </g>
-            <g name="skier">
-            <path name="left-ski" id="skier-body-left-ski"
+            <g class="skier" id="skier-1">
+            <path class="left-ski" id="skier-body-left-ski"
                   d="m 57.5 65.5 l 3 1 q 1 0 0 -1" 
                   stroke="black" stroke-width="0.2" fill="none"/>
-            <use href="#skier-body-left-ski" transform="translate(1.7)"/>
-            <path name="body"
+            <use id="skier-body-right-ski"
+                 href="#skier-body-left-ski" transform="translate(1.7)"/>
+            <use id="skier-body-right-arm"
+                 href="#skier-body-left-arm" transform="translate(1.4)"/>
+            <use id="skier-body-right-ski-pole"
+                 href="#skier-body-left-ski-pole" transform="translate(1.4)"/>
+            <path class="body"
                   d="m 60 60 q -2 2 -1 4 l 2 0 q -1.5 -2 0 -4 z" fill="red"/>
-            <path name="left-arm"
-                  d="m 59 61.5 q -2 2 0 0.5"
+            <path class="arm" id="skier-body-left-arm"
+                  d="m 59 61.5 q -3 2 0.5 1"
                   fill="none" stroke="red" stroke-width="0.2"/>
-            <path name="left-leg" id="skier-body-left-leg"
+            <path class="ski-pole" id="skier-body-left-ski-pole"
+                  d="m 59.5 62.5 l -3 -1"
+                  fill="none" stroke="black" stroke-width="0.2"/>
+            <path class="leg" id="skier-body-left-leg"
                   d="m 59 64 q 1 1 0 2 l 0.3 0 q 1 -1 0 -2 z" fill="red"/>
-            <use href="#skier-body-left-leg" transform="translate(1.7)"/>
-            <circle name="head" cx="60" cy="60" r="1.1" fill="#fff1e3"/>
+            <use class="leg" id="skier-body-right-leg"
+                 href="#skier-body-left-leg" transform="translate(1.7)"/>
+            <circle class="head" cx="60" cy="60" r="1.1" fill="#fff1e3"/>
             </g>
+            <use id="skier-2" href="#skier-1" 
+                 transform="translate(-2, -2) scale(0.6)"/>
         </svg>
     </body>
 </html> 
