@@ -17,7 +17,7 @@
              xmlns="http://www.w3.org/2000/svg">
             <rect class="background" x="0" y="0" 
                   height="100" width="100" fill="#6cf"/>
-            <circle class="sun" cx="15" cy="10" r="5" fill="yellow" 
+            <circle class="sun" id="sun" cx="15" cy="10" r="5" fill="yellow" 
                     stroke="orange" stroke-width="0.2"/>
             <g class="cloud">
             <g class="cloud-outline" fill="#bbb">
@@ -129,5 +129,30 @@
             <use id="skier-4" href="#skier-3" 
                  transform="scale(0.5) translate(46 53)"/>
         </svg>
+
+        <script type="text/javascript">
+            var clouds = document.getElementsByClassName("cloud-center");
+            for (var i = 0; i < clouds.length; i++) {
+                var cloud = clouds[i];
+                cloud.addEventListener('click', function(event) {
+                    if (cloud.style.fill === "grey") {
+                        cloud.style.fill = "#eee";
+                    }
+                    else {
+                        cloud.style.fill = "grey";
+                    }
+                });
+            }
+
+            var sun = document.getElementById("sun");
+            sun.addEventListener('click', function(event) {
+                if (sun.style.fill === "orange") {
+                    sun.style.fill = "yellow";
+                }
+                else {
+                    sun.style.fill = "orange";
+                }
+            });
+        </script>
     </body>
 </html> 
