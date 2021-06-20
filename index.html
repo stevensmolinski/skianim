@@ -12,7 +12,10 @@
             .sun:hover { stroke: red }
             .snowcap:hover { stroke: red; stroke-width: 0.2 }
 
-            .cloud-center.clicked { fill: #aaa; }
+            .lightning { visibility: hidden; fill: yellow; }
+
+            .cloud.clicked .cloud-center { fill: #aaa; }
+            .cloud.clicked .lightning { visibility: visible; }
             .sun.clicked { fill: orange; }
             .snowcap.clicked { fill: #e1e1e1; }
         </style>
@@ -28,6 +31,8 @@
             <circle class="sun" id="sun" cx="15" cy="10" r="5" fill="yellow" 
                     stroke="orange" stroke-width="0.2"/>
             <g class="cloud">
+            <path class="lightning" 
+                  d="m 79 15 l 4 0 l -4 6 l 2 0 l -4 6 l 2 -5 l -2 0 z"/>
             <g class="cloud-outline" fill="#bbb">
             <circle cx="70" cy="10" r="3.2"/>
             <circle cx="75" cy="10" r="5.2"/>
@@ -138,7 +143,7 @@
         </svg>
 
         <script type="text/javascript">
-            var clouds = document.getElementsByClassName("cloud-center");
+            var clouds = document.getElementsByClassName("cloud");
             for (var i = 0; i < clouds.length; i++) {
                 var cloud = clouds[i];
                 cloud.addEventListener('click', function(event) {
