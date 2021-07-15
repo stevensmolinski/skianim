@@ -143,39 +143,27 @@
         </svg>
 
         <script type="text/javascript">
-            var clouds = document.getElementsByClassName("cloud");
-            for (var i = 0; i < clouds.length; i++) {
-                var cloud = clouds[i];
-                cloud.addEventListener('click', function(event) {
-                    if (cloud.classList.contains("clicked")) {
-                        cloud.classList.remove("clicked");
+            function setClickToggle(element) {
+                element.addEventListener('click', function(event) {
+                    if (element.classList.contains("clicked")) {
+                        element.classList.remove("clicked");
                     }
                     else {
-                        cloud.classList.add("clicked");
+                        element.classList.add("clicked");
                     }
                 });
             }
 
+            var clouds = document.getElementsByClassName("cloud");
+            for (var i = 0; i < clouds.length; i++) {
+                setClickToggle(clouds[i]);
+            }
+
             var sun = document.getElementById("sun");
-            sun.addEventListener('click', function(event) {
-               if (sun.classList.contains("clicked")) {
-                   sun.classList.remove("clicked");
-               }
-               else {
-                   sun.classList.add("clicked");
-               }
-            });
+            setClickToggle(sun);
 
             var snowcap = document.getElementById("snowcap");
-            snowcap.addEventListener('click', function(event) {
-               if (snowcap.classList.contains("clicked")) {
-                   snowcap.classList.remove("clicked");
-               }
-               else {
-                   snowcap.classList.add("clicked");
-               }
-               console.log("snowcap.classList = " + snowcap.classList);
-            });
+            setClickToggle(snowcap);
         </script>
     </body>
 </html> 
